@@ -1,9 +1,8 @@
-.PHONY: build-nextjs
+build: build-nextjs
+	go build
+
 build-nextjs:
 	cd nextjs; \
-	yarn install; \
-	NEXT_TELEMETRY_DISABLED=1 yarn run export
+	npm install; \
+	NEXT_TELEMETRY_DISABLED=1 npm run export
 
-.PHONY: build
-build: build-nextjs
-	go build .
