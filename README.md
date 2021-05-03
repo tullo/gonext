@@ -1,52 +1,48 @@
-# golang-nextjs-portable
+# Go - Next.js 
 
-**golang-nextjs-portable** is a small Go program to showcase the `embed` package
-for bundling a static HTML export of a Next.js app.
+**gonext** is a small Go module to showcase the `embed` package
+for bundling a Next.js app.
 
 👉 Read the companion
 [article](https://v0x.nl/articles/portable-apps-go-nextjs) that walks
 through this project.
 
-<img src="https://v0x.nl/assets/articles/golang-nextjs-portable-og.png">
+<img src=".github/bg.png">
 
 ## Requirements
 
 - Go 1.16
-- Yarn
+- Npm
 
 ## Installing
 
 Clone or download the repository:
 
 ```sh
-$ git clone git@github.com:dstotijn/golang-nextjs-portable.git
+$ git clone git@github.com:tullo/gonext.git
 ```
 
 ## Usage
 
-From the repository root directory, generate the static HTML export of the Next.js
-app, and build the Go binary:
+From the repository root directory, generate the static HTML export
+of the Next.js app, and build the Go binary:
 
 ```sh
-$ cd client
-$ yarn install
-$ yarn run export
+$ cd nextjs
+$ npm install
+$ npm run export
 $ cd ..
-$ go build main.go
+$ go build
 ```
 
 Then run the binary:
 
 ```sh
-$ ./golang-nextjs-portable
+$ ././gonext
 
-2021/04/27 14:55:38 Starting HTTP server at http://localhost:8080 ...
+2021/05/03 13:53:12 Starting HTTP server at http://localhost:8000 ...
 ```
 
 ## License
 
 [MIT](/LICENSE)
-
----
-
-© 2021 David Stotijn — [Twitter](https://twitter.com/dstotijn), [Email](mailto:dstotijn@gmail.com), [Homepage](https://v0x.nl)
