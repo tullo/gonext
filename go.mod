@@ -1,3 +1,3 @@
-module github.com/dstotijn/golang-nextjs-portable
+module github.com/tullo/gonext
 
 go 1.16
