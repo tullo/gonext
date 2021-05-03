@@ -27,18 +27,22 @@ $ git clone git@github.com:tullo/gonext.git
 From the repository root directory, generate the static HTML export
 of the Next.js app, and build the Go binary:
 
+`make`
+
+Or stepwise:
+
 ```sh
-$ cd nextjs
-$ npm install
-$ npm run export
-$ cd ..
-$ go build
+cd nextjs
+npm install
+npm run export
+cd ..
+go build
 ```
 
 Then run the binary:
 
 ```sh
-$ ././gonext
+./gonext
 
 2021/05/03 13:53:12 Starting HTTP server at http://localhost:8000 ...
 ```
