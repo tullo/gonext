@@ -26,9 +26,11 @@ func main() {
 	// The API will be served under `/api`.
 	http.HandleFunc("/api", handleAPI)
 
-	// Start HTTP server at :8080.
-	log.Println("Starting HTTP server at http://localhost:8080 ...")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	go walkNextJS(log.Default())
+
+	// Start HTTP server at :8000.
+	log.Println("Starting HTTP server at http://localhost:8000 ...")
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }
 
 func handleAPI(w http.ResponseWriter, _ *http.Request) {
@@ -40,4 +42,14 @@ func handleAPI(w http.ResponseWriter, _ *http.Request) {
 	if err != nil {
 		log.Printf("Error: Failed to write allocs profile: %v", err)
 	}
+}
+
+func walkNextJS(log *log.Logger) error {
+	return fs.WalkDir(nextFS, ".", func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		log.Printf("path=%q, isDir=%v\n", path, d.IsDir())
+		return nil
+	})
 }
