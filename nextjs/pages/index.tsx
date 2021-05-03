@@ -1,11 +1,10 @@
-import Link from "next/link";
 import useSWR from "swr";
 import { useState } from "react";
-
 import {
   Box,
   Button,
   Heading,
+  Link,
   Text,
   useColorMode,
   Switch,
@@ -30,7 +29,7 @@ function Index(): JSX.Element {
         This is <code>pages/index.tsx</code>.
       </Text>
       <Text fontSize="md">
-        Check out <Link href="/foo">foo</Link>.
+        Check out <Link color="teal.500" href="/foo">foo</Link>.
       </Text>
 
       <Heading as="h2">Memory allocation stats from Go server</Heading>
